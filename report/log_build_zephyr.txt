@@ -1,0 +1,276 @@
+-- west build: making build dir /workdir/build pristine
+-- west build: generating a build system
+-- Application: /workdir/ripe
+-- Found Python3: /usr/bin/python3.8 (found suitable exact version "3.8.10") found components: Interpreter 
+-- Cache files will be written to: /workdir/zephyr/.cache
+-- Zephyr version: 3.2.99 (/workdir/zephyr)
+-- Found west (found suitable version "0.14.0", minimum required is "0.7.1")
+-- Board: cv32a6_zybo
+-- Found host-tools: zephyr 0.15.1 (/opt/toolchains/zephyr-sdk-0.15.1)
+-- Found toolchain: zephyr 0.15.1 (/opt/toolchains/zephyr-sdk-0.15.1)
+-- Found Dtc: /opt/toolchains/zephyr-sdk-0.15.1/sysroots/x86_64-pokysdk-linux/usr/bin/dtc (found suitable version "1.6.0", minimum required is "1.4.6") 
+-- Found BOARD.dts: /workdir/zephyr/boards/riscv/cv32a6_zybo/cv32a6_zybo.dts
+-- Generated zephyr.dts: /workdir/build/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: /workdir/build/zephyr/include/generated/devicetree_generated.h
+-- Including generated dts.cmake file: /workdir/build/zephyr/dts.cmake
+Parsing /workdir/zephyr/Kconfig
+Loaded configuration '/workdir/zephyr/boards/riscv/cv32a6_zybo/cv32a6_zybo_defconfig'
+Merged configuration '/workdir/ripe/prj.conf'
+Configuration saved to '/workdir/build/zephyr/.config'
+Kconfig header saved to '/workdir/build/zephyr/include/generated/autoconf.h'
+-- The C compiler identification is GNU 12.1.0
+-- The CXX compiler identification is GNU 12.1.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /opt/toolchains/zephyr-sdk-0.15.1/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-gcc
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workdir/build
+-- west build: building application
+[1/107] Preparing syscall dependency handling
+
+[2/107] Generating misc/generated/syscalls_subdirs.trigger
+[3/107] Generating include/generated/version.h
+-- Zephyr version: 3.2.99 (/workdir/zephyr), build: zephyr-v3.2.0-327-g869365ab012b
+[4/107] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[5/107] Generating include/generated/syscall_dispatch.c, include/generated/syscall_list.h
+[6/107] Generating include/generated/driver-validation.h
+[7/107] Generating include/generated/kobj-types-enum.h, include/generated/otype-to-str.h, include/generated/otype-to-size.h
+[8/107] Building C object zephyr/CMakeFiles/offsets.dir/arch/riscv/core/offsets/offsets.c.obj
+[9/107] Generating include/generated/offsets.h
+[10/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/crc32c_sw.c.obj
+[11/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/crc16_sw.c.obj
+[12/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/crc8_sw.c.obj
+[13/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/crc32_sw.c.obj
+[14/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/crc7_sw.c.obj
+[15/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/dec.c.obj
+[16/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[17/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/hex.c.obj
+[18/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[19/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/sem.c.obj
+[20/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/fdtable.c.obj
+[21/107] Building C object CMakeFiles/app.dir/src/ripe_attack_generator.c.obj
+/workdir/ripe/src/ripe_attack_generator.c:39:48: warning: initialization of 'int (*)(const char *, int)' from incompatible pointer type 'int (*)(const char *)' [-Wincompatible-pointer-types]
+   39 | static struct attackme data_struct = { "AAAA", &dummy_function };
+      |                                                ^
+/workdir/ripe/src/ripe_attack_generator.c:39:48: note: (near initialization for 'data_struct.func_ptr')
+/workdir/ripe/src/ripe_attack_generator.c:44:44: warning: initialization of 'uint32_t *' {aka 'unsigned int *'} from incompatible pointer type 'int (*)(const char *)' [-Wincompatible-pointer-types]
+   44 | static uint32_t * data_mem_ptr_aux[64] = { &dummy_function };
+      |                                            ^
+/workdir/ripe/src/ripe_attack_generator.c:44:44: note: (near initialization for 'data_mem_ptr_aux[0]')
+/workdir/ripe/src/ripe_attack_generator.c:45:40: warning: initialization of 'uint32_t *' {aka 'unsigned int *'} from incompatible pointer type 'int (*)(const char *)' [-Wincompatible-pointer-types]
+   45 | static uint32_t * data_mem_ptr[64] = { &dummy_function };
+      |                                        ^
+/workdir/ripe/src/ripe_attack_generator.c:45:40: note: (near initialization for 'data_mem_ptr[0]')
+/workdir/ripe/src/ripe_attack_generator.c: In function 'main':
+/workdir/ripe/src/ripe_attack_generator.c:200:12: warning: 'return' with a value, in function returning void [-Wreturn-type]
+  200 |     return 0;
+      |            ^
+/workdir/ripe/src/ripe_attack_generator.c:120:1: note: declared here
+  120 | main(void)
+      | ^~~~
+/workdir/ripe/src/ripe_attack_generator.c: In function 'perform_attack':
+/workdir/ripe/src/ripe_attack_generator.c:231:27: warning: assignment to 'int (*)(const char *, int)' from incompatible pointer type 'int (*)(const char *)' [-Wincompatible-pointer-types]
+  231 |     stack_struct.func_ptr = &dummy_function;
+      |                           ^
+/workdir/ripe/src/ripe_attack_generator.c:245:27: warning: assignment to 'int (*)(const char *, int)' from incompatible pointer type 'int (*)(const char *)' [-Wincompatible-pointer-types]
+  245 |     heap_struct->func_ptr = dummy_function;
+      |                           ^
+/workdir/ripe/src/ripe_attack_generator.c:303:21: warning: passing argument 1 of 'build_shellcode' from incompatible pointer type [-Wincompatible-pointer-types]
+  303 |     build_shellcode(shellcode_nonop);
+      |                     ^~~~~~~~~~~~~~~
+      |                     |
+      |                     char **
+In file included from /workdir/ripe/src/ripe_attack_generator.c:15:
+/workdir/ripe/src/ripe_attack_generator.h:179:28: note: expected 'char *' but argument is of type 'char **'
+  179 | void build_shellcode(char *shellcode);
+      |                      ~~~~~~^~~~~~~~~
+/workdir/ripe/src/ripe_attack_generator.c:323:31: warning: assignment to 'long int *' from incompatible pointer type 'int *' [-Wincompatible-pointer-types]
+  323 |                 stack_mem_ptr = &stack_flag;
+      |                               ^
+/workdir/ripe/src/ripe_attack_generator.c:359:33: warning: assignment to 'long long int (*)[38]' from incompatible pointer type 'int *' [-Wincompatible-pointer-types]
+  359 |                 heap_jmp_buffer = (int *) malloc(sizeof(jmp_buf));
+      |                                 ^
+/workdir/ripe/src/ripe_attack_generator.c:371:30: warning: assignment to 'long int *' from incompatible pointer type 'int *' [-Wincompatible-pointer-types]
+  371 |                 heap_mem_ptr = heap_flag;
+      |                              ^
+/workdir/ripe/src/ripe_attack_generator.c:400:29: warning: assignment to 'long long int (*)[38]' from incompatible pointer type 'char *' [-Wincompatible-pointer-types]
+  400 |             heap_jmp_buffer = heap_buffer1;
+      |                             ^
+/workdir/ripe/src/ripe_attack_generator.c:415:29: warning: assignment to 'long int *' from incompatible pointer type 'int (*)(const char *)' [-Wincompatible-pointer-types]
+  415 |             bss_mem_ptr_aux = &dummy_function;
+      |                             ^
+/workdir/ripe/src/ripe_attack_generator.c:416:29: warning: assignment to 'long int *' from incompatible pointer type 'int (*)(const char *)' [-Wincompatible-pointer-types]
+  416 |             bss_mem_ptr     = &dummy_function;
+      |                             ^
+/workdir/ripe/src/ripe_attack_generator.c:420:29: warning: assignment to 'long int *' from incompatible pointer type 'int **' [-Wincompatible-pointer-types]
+  420 |                 bss_mem_ptr = &bss_flag;
+      |                             ^
+/workdir/ripe/src/ripe_attack_generator.c:473:56: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+  473 |                     target_addr = (void *) heap_struct + 256;
+      |                                                        ^
+/workdir/ripe/src/ripe_attack_generator.c:556:32: warning: assignment to 'long long int (*)[38]' from incompatible pointer type 'long long int **' [-Wincompatible-pointer-types]
+  556 |             payload.jmp_buffer = &stack_jmp_buffer_param;
+      |                                ^
+/workdir/ripe/src/ripe_attack_generator.c:564:44: warning: assignment to 'long int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+  564 |             payload.stack_jmp_buffer_param = NULL;
+      |                                            ^
+/workdir/ripe/src/ripe_attack_generator.c:572:44: warning: assignment to 'long int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+  572 |             payload.stack_jmp_buffer_param = NULL;
+      |                                            ^
+/workdir/ripe/src/ripe_attack_generator.c:580:44: warning: assignment to 'long int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+  580 |             payload.stack_jmp_buffer_param = NULL;
+      |                                            ^
+/workdir/ripe/src/ripe_attack_generator.c:586:40: warning: assignment to 'long int *' from incompatible pointer type 'void **' [-Wincompatible-pointer-types]
+  586 |     payload.ptr_to_correct_return_addr = RET_ADDR_PTR;
+      |                                        ^
+/workdir/ripe/src/ripe_attack_generator.c:600:42: warning: assignment to 'void *' from 'long unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+  600 |                     payload.overflow_ptr = (uintptr_t) &rop_target;
+      |                                          ^
+/workdir/ripe/src/ripe_attack_generator.c:607:42: warning: assignment to 'void *' from 'unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+  607 |                     payload.overflow_ptr = 0xdeadbeef;
+      |                                          ^
+/workdir/ripe/src/ripe_attack_generator.c:643:65: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]
+  643 |                     payload.overflow_ptr = (void *) heap_struct + 256;
+      |                                                                 ^
+/workdir/ripe/src/ripe_attack_generator.c: In function 'build_payload':
+/workdir/ripe/src/ripe_attack_generator.c:899:28: warning: assignment to 'char *' from incompatible pointer type 'char **' [-Wincompatible-pointer-types]
+  899 |             shellcode      = shellcode_nonop;
+      |                            ^
+/workdir/ripe/src/ripe_attack_generator.c:892:45: warning: unused variable 'temp_char_ptr' [-Wunused-variable]
+  892 |     char * shellcode, * temp_char_buffer, * temp_char_ptr;
+      |                                             ^~~~~~~~~~~~~
+/workdir/ripe/src/ripe_attack_generator.c:892:25: warning: unused variable 'temp_char_buffer' [-Wunused-variable]
+  892 |     char * shellcode, * temp_char_buffer, * temp_char_ptr;
+      |                         ^~~~~~~~~~~~~~~~
+/workdir/ripe/src/ripe_attack_generator.c: In function 'dop_target':
+/workdir/ripe/src/ripe_attack_generator.c:1007:18: warning: passing argument 2 of 'iof' makes integer from pointer without a cast [-Wint-conversion]
+ 1007 |         iof(buf, &auth_loc);
+      |                  ^~~~~~~~~
+      |                  |
+      |                  size_t * {aka unsigned int *}
+/workdir/ripe/src/ripe_attack_generator.c:65:26: note: expected 'uint32_t' {aka 'unsigned int'} but argument is of type 'size_t *' {aka 'unsigned int *'}
+   65 | iof(char * buf, uint32_t iv);
+      |                 ~~~~~~~~~^~
+/workdir/ripe/src/ripe_attack_generator.c: In function 'set_low_buf':
+/workdir/ripe/src/ripe_attack_generator.c:1032:10: warning: assignment to 'char *' from incompatible pointer type 'char (*)[1024]' [-Wincompatible-pointer-types]
+ 1032 |     *buf = &low_buf;
+      |          ^
+/workdir/ripe/src/ripe_attack_generator.c: In function 'build_shellcode':
+/workdir/ripe/src/ripe_attack_generator.c:1083:62: warning: pointer to a function used in arithmetic [-Wpointer-arith]
+ 1083 |                 hex_to_string(attack_addr, &shellcode_target + 0x1000);
+      |                                                              ^
+/workdir/ripe/src/ripe_attack_generator.c:1083:62: warning: passing argument 2 of 'hex_to_string' makes integer from pointer without a cast [-Wint-conversion]
+ 1083 |                 hex_to_string(attack_addr, &shellcode_target + 0x1000);
+      |                                            ~~~~~~~~~~~~~~~~~~^~~~~~~~
+      |                                                              |
+      |                                                              void (*)()
+/workdir/ripe/src/ripe_attack_generator.h:180:38: note: expected 'size_t' {aka 'unsigned int'} but argument is of type 'void (*)()'
+  180 | void hex_to_string(char *str, size_t val);
+      |                               ~~~~~~~^~~
+/workdir/ripe/src/ripe_attack_generator.c:1085:44: warning: passing argument 2 of 'hex_to_string' makes integer from pointer without a cast [-Wint-conversion]
+ 1085 |                 hex_to_string(attack_addr, &shellcode_target);
+      |                                            ^~~~~~~~~~~~~~~~~
+      |                                            |
+      |                                            void (*)()
+/workdir/ripe/src/ripe_attack_generator.h:180:38: note: expected 'size_t' {aka 'unsigned int'} but argument is of type 'void (*)()'
+  180 | void hex_to_string(char *str, size_t val);
+      |                               ~~~~~~~^~~
+/workdir/ripe/src/ripe_attack_generator.c: In function 'set_low_buf':
+/workdir/ripe/src/ripe_attack_generator.c:1032:10: warning: storing the address of local variable 'low_buf' in '*buf' [-Wdangling-pointer=]
+ 1032 |     *buf = &low_buf;
+      |     ~~~~~^~~~~~~~~~
+/workdir/ripe/src/ripe_attack_generator.c:1028:10: note: 'low_buf' declared here
+ 1028 |     char low_buf[1024];
+      |          ^~~~~~~
+/workdir/ripe/src/ripe_attack_generator.c:1028:10: note: 'buf' declared here
+[22/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/thread_entry.c.obj
+[23/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/timeutil.c.obj
+[24/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/rb.c.obj
+[25/107] Linking C static library app/libapp.a
+[26/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/multi_heap.c.obj
+[27/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/heap-validate.c.obj
+[28/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf.c.obj
+[29/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_complete.c.obj
+[30/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/heap.c.obj
+[31/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/bitarray.c.obj
+[32/107] Building C object zephyr/CMakeFiles/zephyr.dir/misc/generated/configs.c.obj
+[33/107] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/assert.c.obj
+[34/107] Building ASM object zephyr/CMakeFiles/zephyr.dir/soc/riscv/riscv-privilege/common/vector.S.obj
+[35/107] Building ASM object zephyr/CMakeFiles/zephyr.dir/soc/riscv/riscv-privilege/common/soc_irq.S.obj
+[36/107] Building C object zephyr/CMakeFiles/zephyr.dir/soc/riscv/riscv-privilege/common/idle.c.obj
+[37/107] Building C object zephyr/CMakeFiles/zephyr.dir/soc/riscv/riscv-privilege/common/soc_common_irq.c.obj
+[38/107] Building C object zephyr/arch/common/CMakeFiles/arch__common.dir/sw_isr_common.c.obj
+[39/107] Generating linker_zephyr_pre0.cmd
+[40/107] Generating linker_zephyr_pre1.cmd
+[41/107] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/tracing/tracing_none.c.obj
+[42/107] Building C object zephyr/arch/common/CMakeFiles/isr_tables.dir/isr_tables.c.obj
+[43/107] Linking C static library zephyr/arch/common/libisr_tables.a
+[44/107] Linking C static library zephyr/libzephyr.a
+[45/107] Building C object zephyr/CMakeFiles/zephyr_pre0.dir/misc/empty_file.c.obj
+[46/107] Linking C static library zephyr/arch/common/libarch__common.a
+[47/107] Building C object zephyr/arch/arch/riscv/core/CMakeFiles/arch__riscv__core.dir/cpu_idle.c.obj
+[48/107] Building ASM object zephyr/arch/arch/riscv/core/CMakeFiles/arch__riscv__core.dir/isr.S.obj
+[49/107] Building ASM object zephyr/arch/arch/riscv/core/CMakeFiles/arch__riscv__core.dir/reset.S.obj
+[50/107] Building C object zephyr/arch/arch/riscv/core/CMakeFiles/arch__riscv__core.dir/prep_c.c.obj
+[51/107] Building C object zephyr/arch/arch/riscv/core/CMakeFiles/arch__riscv__core.dir/irq_manage.c.obj
+[52/107] Building ASM object zephyr/arch/arch/riscv/core/CMakeFiles/arch__riscv__core.dir/switch.S.obj
+[53/107] Building C object zephyr/arch/arch/riscv/core/CMakeFiles/arch__riscv__core.dir/reboot.c.obj
+[54/107] Building C object zephyr/arch/arch/riscv/core/CMakeFiles/arch__riscv__core.dir/smp.c.obj
+[55/107] Building C object zephyr/subsys/random/CMakeFiles/subsys__random.dir/rand32_timer.c.obj
+[56/107] Linking C static library zephyr/subsys/random/libsubsys__random.a
+[57/107] Building C object zephyr/arch/arch/riscv/core/CMakeFiles/arch__riscv__core.dir/thread.c.obj
+[58/107] Building C object zephyr/drivers/interrupt_controller/CMakeFiles/drivers__interrupt_controller.dir/intc_plic.c.obj
+[59/107] Building C object zephyr/lib/libc/newlib/CMakeFiles/lib__libc__newlib.dir/libc-hooks.c.obj
+[60/107] Linking C static library zephyr/drivers/interrupt_controller/libdrivers__interrupt_controller.a
+[61/107] Linking C static library zephyr/lib/libc/newlib/liblib__libc__newlib.a
+[62/107] Building C object zephyr/drivers/console/CMakeFiles/drivers__console.dir/uart_console.c.obj
+[63/107] Building C object zephyr/drivers/serial/CMakeFiles/drivers__serial.dir/uart_ns16550.c.obj
+[64/107] Building C object zephyr/arch/arch/riscv/core/CMakeFiles/arch__riscv__core.dir/fatal.c.obj
+[65/107] Linking C static library zephyr/drivers/serial/libdrivers__serial.a
+[66/107] Linking C static library zephyr/drivers/console/libdrivers__console.a
+[67/107] Linking C static library zephyr/arch/arch/riscv/core/libarch__riscv__core.a
+[68/107] Building C object zephyr/drivers/timer/CMakeFiles/drivers__timer.dir/sys_clock_init.c.obj
+[69/107] Building C object zephyr/drivers/timer/CMakeFiles/drivers__timer.dir/riscv_machine_timer.c.obj
+[70/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/main_weak.c.obj
+[71/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/banner.c.obj
+[72/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/errno.c.obj
+[73/107] Linking C static library zephyr/drivers/timer/libdrivers__timer.a
+[74/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/device.c.obj
+[75/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/version.c.obj
+[76/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/kheap.c.obj
+[77/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mem_slab.c.obj
+[78/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/fatal.c.obj
+[79/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/idle.c.obj
+[80/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/init.c.obj
+[81/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mailbox.c.obj
+[82/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/thread.c.obj
+[83/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/msg_q.c.obj
+[84/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/stack.c.obj
+[85/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/sem.c.obj
+[86/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/system_work_q.c.obj
+[87/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/queue.c.obj
+[88/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/compiler_stack_protect.c.obj
+[89/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/work.c.obj
+[90/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/condvar.c.obj
+[91/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/timer.c.obj
+[92/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mempool.c.obj
+[93/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/timeout.c.obj
+[94/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mutex.c.obj
+[95/107] Building C object zephyr/kernel/CMakeFiles/kernel.dir/sched.c.obj
+[96/107] Linking C static library zephyr/kernel/libkernel.a
+[97/107] Linking C executable zephyr/zephyr_pre0.elf
+
+[98/107] Generating dev_handles.c
+[99/107] Building C object zephyr/CMakeFiles/zephyr_pre1.dir/misc/empty_file.c.obj
+[100/107] Building C object zephyr/CMakeFiles/zephyr_pre1.dir/dev_handles.c.obj
+[101/107] Linking C executable zephyr/zephyr_pre1.elf
+
+[102/107] Generating linker.cmd
+[103/107] Generating isr_tables.c, isrList.bin
+[104/107] Building C object zephyr/CMakeFiles/zephyr_final.dir/misc/empty_file.c.obj
+[105/107] Building C object zephyr/CMakeFiles/zephyr_final.dir/isr_tables.c.obj
+[106/107] Building C object zephyr/CMakeFiles/zephyr_final.dir/dev_handles.c.obj
+[107/107] Linking C executable zephyr/zephyr.elf
+Memory region         Used Size  Region Size  %age Used
+             RAM:       54944 B         1 GB      0.01%
+        IDT_LIST:          0 GB         2 KB      0.00%

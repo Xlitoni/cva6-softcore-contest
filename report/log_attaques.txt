@@ -1,0 +1,359 @@
+################################## Attaque 1 #####################################################
+
+
+*** Booting Zephyr OS build zephyr-v3.2.0-327-g869365ab012b  ***
+RIPE is alive! cv32a6_zybo
+RIPE parameters:
+technique	direct
+inject param	shellcode
+code pointer	ret
+location	stack
+function	memcpy
+----------------
+Shellcode instructions:
+lui t1,  0x80001                     80001337
+addi t1, t1, 0xb4c                   b4c30313
+jalr t1                              000300e7
+----------------
+target_addr == 0x8000ce0c
+buffer == 0x8000c9ec
+payload size == 1061
+bytes to pad: 1044
+
+overflow_ptr: 0x8000c9ec
+payload: 7
+
+Executing attack... 
+
+
+
+################################## Attaque 2 #####################################################
+
+
+
+*** Booting Zephyr OS build zephyr-v3.2.0-327-g869365ab012b  ***
+RIPE is alive! cv32a6_zybo
+RIPE parameters:
+technique	direct
+inject param	shellcode
+code pointer	funcptrstackvar
+location	stack
+function	memcpy
+----------------
+Shellcode instructions:
+lui t1,  0x80001                     80001337
+addi t1, t1, 0xb4c                   b4c30313
+jalr t1                              000300e7
+----------------
+target_addr == 0x8000c748
+buffer == 0x8000c9ec
+Error calculating size of payload
+exit
+
+
+
+################################## Attaque 3 #####################################################
+
+
+
+
+
+*** Booting Zephyr OS build zephyr-v3.2.0-327-g869365ab012b  ***
+RIPE is alive! cv32a6_zybo
+RIPE parameters:
+technique	indirect
+inject param	shellcode
+code pointer	funcptrstackvar
+location	stack
+function	memcpy
+----------------
+Shellcode instructions:
+lui t1,  0x80001                     80001337
+addi t1, t1, 0xb4c                   b4c30313
+jalr t1                              000300e7
+----------------
+target_addr == 0x8000c74c
+buffer == 0x8000c9ec
+Error calculating size of payload
+exit
+
+
+
+
+
+################################## Attaque 4 #####################################################
+
+
+
+A la première exécution : 
+
+*** Booting Zephyr OS build zephyr-v3.2.0-327-g869365ab012b  ***
+RIPE is alive! cv32a6_zybo
+RIPE parameters:
+technique	direct
+inject param	dataonly
+code pointer	leak
+location	heap
+function	sprintf
+----------------
+Shellcode instructions:
+lui t1,  0x80001                     80001337
+addi t1, t1, 0xb4c                   b4c30313
+jalr t1                              000300e7
+----------------
+target_addr == 0x8000d8c0
+buffer == 0x8000d7b0
+payload size == 277
+
+Executing attack... 
+Unexpected back in main
+
+
+
+Aux exécutions suivantes : 
+
+
+*** Booting Zephyr OS build zephyr-v3.2.0-327-g869365ab012b  ***
+RIPE is alive! cv32a6_zybo
+RIPE parameters:
+technique	direct
+inject param	dataonly
+code pointer	leak
+location	heap
+function	sprintf
+----------------
+Shellcode instructions:
+lui t1,  0x80001                     80001337
+addi t1, t1, 0xb4c                   b4c30313
+jalr t1                              000300e7
+----------------
+target_addr == 0x8000d8c0
+buffer == 0x8000d7b0
+payload size == 277
+
+Executing attack... �����success. Secret data leaked.������ô8����BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB���������success. Secret data leaked.������ô8����BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB���������succes
+Unexpected back in main
+
+
+
+################################## Attaque 5 #####################################################
+
+
+
+
+*** Booting Zephyr OS build zephyr-v3.2.0-327-g869365ab012b  ***
+RIPE is alive! cv32a6_zybo
+RIPE parameters:
+technique	direct
+inject param	returnintolibc
+code pointer	ret
+location	stack
+function	memcpy
+----------------
+Shellcode instructions:
+lui t1,  0x80001                     80001337
+addi t1, t1, 0xb4c                   b4c30313
+jalr t1                              000300e7
+----------------
+target_addr == 0x8000ce0c
+buffer == 0x8000c9ec
+payload size == 1061
+bytes to pad: 1056
+
+overflow_ptr: 0x80000b78
+payload: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBx
+
+
+Executing attack... 
+
+
+
+
+################################## Attaque 6 #####################################################
+
+
+
+*** Booting Zephyr OS build zephyr-v3.2.0-327-g869365ab012b  ***
+RIPE is alive! cv32a6_zybo
+RIPE parameters:
+technique	indirect
+inject param	returnintolibc
+code pointer	funcptrheap
+location	heap
+function	memcpy
+----------------
+Shellcode instructions:
+lui t1,  0x80001                     80001337
+addi t1, t1, 0xb4c                   b4c30313
+jalr t1                              000300e7
+----------------
+target_addr == 0x8000d9c8
+buffer == 0x8000d7b0
+payload size == 541
+bytes to pad: 536
+
+overflow_ptr: 0x8000dae0
+payload: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB��
+bytes to pad: 272
+
+overflow_ptr: 0x80000b78
+payload: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBx
+
+target_addr_aux: 0x8000d8c0
+
+Executing attack... success.
+Ret2Libc function reached.
+exit
+
+
+
+
+################################## Attaque 7 #####################################################
+
+
+
+
+*** Booting Zephyr OS build zephyr-v3.2.0-327-g869365ab012b  ***
+RIPE is alive! cv32a6_zybo
+RIPE parameters:
+technique	indirect
+inject param	returnintolibc
+code pointer	structfuncptrheap
+location	heap
+function	homebrew
+----------------
+Shellcode instructions:
+lui t1,  0x80001                     80001337
+addi t1, t1, 0xb4c                   b4c30313
+jalr t1                              000300e7
+----------------
+target_addr == 0x8000d9c8
+buffer == 0x8000d7b0
+payload size == 541
+bytes to pad: 536
+
+overflow_ptr: 0x8000d7a8
+payload: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB��
+bytes to pad: 272
+
+overflow_ptr: 0x80000b78
+payload: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBx
+
+target_addr_aux: 0x8000d8c0
+
+Executing attack... success.
+Ret2Libc function reached.
+exit
+
+
+
+################################## Attaque 8 #####################################################
+
+
+
+*** Booting Zephyr OS build zephyr-v3.2.0-327-g869365ab012b  ***
+RIPE is alive! cv32a6_zybo
+RIPE parameters:
+technique	indirect
+inject param	returnintolibc
+code pointer	longjmpheap
+location	heap
+function	memcpy
+----------------
+Shellcode instructions:
+lui t1,  0x80001                     80001337
+addi t1, t1, 0xb4c                   b4c30313
+jalr t1                              000300e7
+----------------
+target_addr == 0x8000d9c8
+buffer == 0x8000d7b0
+payload size == 541
+bytes to pad: 536
+
+overflow_ptr: 0x8000daf0
+payload: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB��
+bytes to pad: 272
+
+overflow_ptr: 0x80000b78
+payload: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBx
+
+target_addr_aux: 0x8000d8c0
+
+Executing attack... success.
+Ret2Libc function reached.
+exit
+
+
+
+################################## Attaque 9 #####################################################
+
+
+
+
+*** Booting Zephyr OS build zephyr-v3.2.0-327-g869365ab012b  ***
+RIPE is alive! cv32a6_zybo
+RIPE parameters:
+technique	direct
+inject param	rop
+code pointer	ret
+location	stack
+function	memcpy
+----------------
+Shellcode instructions:
+lui t1,  0x80001                     80001337
+addi t1, t1, 0xb4c                   b4c30313
+jalr t1                              000300e7
+----------------
+target_addr == 0x8000ce0c
+buffer == 0x8000c9ec
+payload size == 1061
+bytes to pad: 1056
+
+overflow_ptr: 0x80000ba4
+payload: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB�
+
+
+Executing attack... 
+
+
+
+
+################################## Attaque 10 #####################################################
+
+
+
+
+*** Booting Zephyr OS build zephyr-v3.2.0-327-g869365ab012b  ***
+RIPE is alive! cv32a6_zybo
+RIPE parameters:
+technique	direct
+inject param	rop
+code pointer	structfuncptrheap
+location	heap
+function	sprintf
+----------------
+Shellcode instructions:
+lui t1,  0x80001                     80001337
+addi t1, t1, 0xb4c                   b4c30313
+jalr t1                              000300e7
+----------------
+target_addr == 0x8000d7a8
+buffer == 0x8000d6a8
+payload size == 261
+bytes to pad: 256
+
+overflow_ptr: 0x80000ba4
+payload: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB�
+
+
+Executing attack... success.
+ROP function reached.
+exit
+
+
+
+
+
+
+
+
