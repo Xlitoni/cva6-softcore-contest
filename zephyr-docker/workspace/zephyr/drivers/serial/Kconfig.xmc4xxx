@@ -1,0 +1,12 @@
+# Copyright (c) 2020 Linumiz
+#
+# Author: Parthiban Nallathambi <parthiban@linumiz.com>
+# SPDX-License-Identifier: Apache-2.0
+
+config UART_XMC4XXX
+	bool "XMC4XX UART driver"
+	default y
+	depends on DT_HAS_INFINEON_XMC4XXX_UART_ENABLED
+	select SERIAL_HAS_DRIVER
+	help
+	  This option enables the XMC4XX UART driver, for UART_0.
